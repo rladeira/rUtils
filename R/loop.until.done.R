@@ -1,7 +1,7 @@
 
 
 #' @title
-#' Error swallower
+#' Error Swallower
 #'
 #' @description
 #' Recursive helper function to reinvoke other function

@@ -1,6 +1,6 @@
 
 #' @title
-#' CPU parallel processing in Linux
+#' CPU Parallel Processing in Linux
 #'
 #' @description
 #' Utility function which executes a task with automatic configured linux parallel
@@ -20,11 +20,11 @@
 #' # a function simulating an useful parallel task
 #' summation <- function(){
 #'    # saves the result in the parent enviroment
-#'    result <<- sum(foreach(i = 1:1000, .combine = "c") %dopar% {i*i})
+#'    result <<- sum(foreach(i = 1:10000, .combine = "c") %dopar% {sqrt(i)})
 #' }
 #'
 #' execute.with.linux.cpu.parallel.backend(summation)
-#' print(result)
+#' print(result) ## 666716.5
 #'
 #'
 

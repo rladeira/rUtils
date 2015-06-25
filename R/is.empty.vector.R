@@ -9,11 +9,11 @@
 #' @return A boolean vector with just one element indicating if the vector \code{vec} is empty.
 #'
 #' @examples
-#' is.vector.empty(1:10)
-#' is.vector.empty(numeric())
+#' is.vector.empty(1:10) ## FALSE
+#' is.vector.empty(numeric()) ## TRUE
 #' @export
 #'
-is.vector.empty <- function(vec){
+is.empty.vector <- function(vec){
 
   if(!is.vector(vec))
     stop("Parameter must be a vector!")

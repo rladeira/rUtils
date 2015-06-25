@@ -2,7 +2,7 @@
 % Please edit documentation in R/execute.with.linux.parallel.backend.R
 \name{execute.with.linux.cpu.parallel.backend}
 \alias{execute.with.linux.cpu.parallel.backend}
-\title{CPU parallel processing in Linux}
+\title{CPU Parallel Processing in Linux}
 \usage{
 execute.with.linux.cpu.parallel.backend(task.to.be.executed, n.cores = NULL,
   ...)
@@ -34,10 +34,10 @@ library(foreach)
 # a function simulating an useful parallel task
 summation <- function(){
    # saves the result in the parent enviroment
-   result <<- sum(foreach(i = 1:1000, .combine = "c") \%dopar\% {i*i})
+   result <<- sum(foreach(i = 1:10000, .combine = "c") \%dopar\% {sqrt(i)})
 }
 
 execute.with.linux.cpu.parallel.backend(summation)
-print(result)
+print(result) ## 666716.5
 }
 

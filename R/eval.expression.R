@@ -12,7 +12,7 @@
 #' @examples
 #'
 #' eval.expression("n <- 1 + 1")
-#' cat(n)
+#' cat(n) ## 2
 #'
 
 eval.expression <- function(expression.as.character){

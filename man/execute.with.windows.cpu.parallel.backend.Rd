@@ -2,7 +2,7 @@
 % Please edit documentation in R/execute.with.windows.parallel.backend.R
 \name{execute.with.windows.cpu.parallel.backend}
 \alias{execute.with.windows.cpu.parallel.backend}
-\title{CPU parallel processing in Windows OS}
+\title{CPU Parallel Processing in Windows OS}
 \usage{
 execute.with.windows.cpu.parallel.backend(task.to.be.executed, n.cores = NULL,
   ...)
@@ -34,10 +34,10 @@ library(foreach)
 # a function simulating an useful parallel task
 summation <- function(){
    # saves the result in the parent enviroment
-   result <<- sum(foreach(i = 1:1000, .combine = "c") \%dopar\% {i*i})
+   result <<- sum(foreach(i = 1:10000, .combine = "c") \%dopar\% {sqrt(i)})
 }
 
 execute.with.windows.cpu.parallel.backend(summation)
-print(result)
+print(result) ## 666716.5
 }
 

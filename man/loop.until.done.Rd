@@ -2,7 +2,7 @@
 % Please edit documentation in R/loop.until.done.R
 \name{loop.until.done}
 \alias{loop.until.done}
-\title{Error swallower}
+\title{Error Swallower}
 \usage{
 loop.until.done(func, ...)
 }

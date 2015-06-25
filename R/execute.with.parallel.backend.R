@@ -1,7 +1,7 @@
 
 
 #' @title
-#' CPU parallel processing
+#' CPU Parallel Processing
 #'
 #' @description
 #' Helper function which automatically configures a CPU parallel
@@ -29,13 +29,13 @@
 #' # a function simulating an useful parallel task
 #' summation <- function(){
 #'    # saves the result in the parent enviroment
-#'    result <<- sum(foreach(i = 1:1000, .combine = "c") %dopar% {i*i})
+#'    result <<- sum(foreach(i = 1:10000, .combine = "c") %dopar% {sqrt(i)})
 #' }
 #'
 #' # this code is portable between windows and linux, if the right packages
 #' # are installed in both of them.
 #' execute.with.cpu.parallel.backend(summation)
-#' print(result)
+#' print(result) ## 666716.5
 #'
 #'
 
