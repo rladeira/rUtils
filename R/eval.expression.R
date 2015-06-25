@@ -17,12 +17,12 @@
 
 eval.expression <- function(expression.as.character){
 
+  if(!is.character(expression.as.character))
+    stop("expression.as.character must be of type character!")
   if(length(expression.as.character) > 1)
     stop("expression.as.character must have just one character element!")
   if(is.vector.empty(expression.as.character))
     stop("expression.as.character cannot be empty!")
-  if(!is.character(expression.as.character))
-    stop("expression.as.character must be of type character!")
 
   eval(parse(text = expression.as.character),
        envir = parent.frame())

@@ -21,5 +21,8 @@ has.only.NaNs <- function(vec){
     if(!is.nan(e)) return(FALSE)
   }
 
+  if(is.vector.empty(vec))
+    return(FALSE)
+
   return(TRUE)
 }
