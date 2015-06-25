@@ -1,0 +1,8 @@
+Package: rl.utils
+Title: Custom utility functions
+Version: 1.0.0
+Authors@R: person("Rafael", "Ladeira", email = "rwladeira@gmail.com", role = c("aut", "cre"))
+Description: An R package with several utility functions for helping to build more readable code in R.
+Depends: R (>= 3.1.2)
+License: MIT
+LazyData: true
