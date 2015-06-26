@@ -11,8 +11,10 @@
 #' @examples
 #' is.vector.empty(1:10) ## FALSE
 #' is.vector.empty(numeric()) ## TRUE
-#' @export
 #'
+#'
+#' @export
+
 is.empty.vector <- function(vec){
 
   if(!is.vector(vec))

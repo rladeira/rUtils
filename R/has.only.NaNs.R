@@ -11,6 +11,7 @@
 #' has.only.NaNs(c(NaN, NaN, NaN)) ## TRUE
 #' has.only.NaNs(c(1, NaN, NaN))   ## FALSE
 #'
+#' @export
 
 has.only.NaNs <- function(vec){
 

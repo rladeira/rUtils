@@ -15,6 +15,7 @@
 #' character.contains("ab", "abc") ## returns TRUE
 #' character.contains("abc", "ab") ## returns FALSE.
 #'
+#' @export
 
 character.contains <- function(sub.character, character){
 

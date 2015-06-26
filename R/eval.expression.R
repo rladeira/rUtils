@@ -14,6 +14,7 @@
 #' eval.expression("n <- 1 + 1")
 #' cat(n) ## 2
 #'
+#' @export
 
 eval.expression <- function(expression.as.character){
 

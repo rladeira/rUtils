@@ -26,7 +26,8 @@
 #' execute.with.windows.cpu.parallel.backend(summation)
 #' print(result) ## 666716.5
 #'
-#'
+#' @export
+
 
 execute.with.windows.cpu.parallel.backend <- function(task.to.be.executed,
                                                  n.cores = NULL,

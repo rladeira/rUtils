@@ -14,6 +14,8 @@
 #' source.all.files(file.path("dir1", "dir2"))
 #' source.all.files()
 #'
+#' @export
+
 
 source.all.files <- function(path = NULL){
 
