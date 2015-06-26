@@ -54,6 +54,6 @@ execute.with.cpu.parallel.backend <- function(task.to.be.executed,
     stop("task.to.be.executed must be a function!")
 
   switch(Sys.info()[['sysname']],
-         Windows = execute.with.windows.parallel.config(task.to.be.executed, n.cores, ...),
-         Linux   = execute.with.linux.parallel.config(task.to.be.executed, n.cores, ...))
+         Windows = execute.with.windows.cpu.parallel.config(task.to.be.executed, n.cores, ...),
+         Linux   = execute.with.linux.cpu.parallel.config(task.to.be.executed, n.cores, ...))
 }
