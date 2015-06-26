@@ -15,7 +15,7 @@
 #'
 #' @export
 
-is.empty.vector <- function(vec){
+is.vector.empty <- function(vec){
 
   if(!is.vector(vec))
     stop("Parameter must be a vector!")
