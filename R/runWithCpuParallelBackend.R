@@ -5,7 +5,7 @@
 #'
 #' @description
 #' Helper function which automatically configures a CPU parallel
-#' backend either on Linux or Windows (MAC OS is not supported).
+#' backend either on Linux or Windows (It was not tested in MAC OS).
 #' It is specially useful when there is a requirement to write R
 #' code that should be portable between windows and linux.
 #'
@@ -43,6 +43,8 @@ runWithCpuParallelBackend <- function(taskToBeExecuted,
                                       nCores = NULL,
                                       ...) {
 
+  library(parallel)
+
   if(is.null(nCores))
     nCores <- as.numeric(detectCores())
   if(!is.numeric(nCores))
@@ -54,9 +56,9 @@ runWithCpuParallelBackend <- function(taskToBeExecuted,
   if(!is.function(taskToBeExecuted))
     stop("taskToBeExecuted must be a function!")
 
-  library(parallel)
-
   switch(Sys.info()[['sysname']],
          Windows = runWithWindowsCpuParallelBackend(taskToBeExecuted, nCores, ...),
          Linux   = runWithLinuxCpuParallelBackend(taskToBeExecuted, nCores, ...))
+
+  return(invisible())
 }

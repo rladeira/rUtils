@@ -32,6 +32,8 @@
 runWithWindowsCpuParallelBackend <- function(taskToBeExecuted,
                                              nCores = NULL,
                                              ...) {
+  library(parallel)
+  library(doSNOW)
 
   if(is.null(nCores))
     nCores <- as.numeric(detectCores())
@@ -44,9 +46,6 @@ runWithWindowsCpuParallelBackend <- function(taskToBeExecuted,
   if(!is.function(taskToBeExecuted))
     stop("taskToBeExecuted must be a function!")
 
-  library(parallel)
-  library(doSNOW)
-
   cl <- makeCluster(nCores, type = "SOCK", outfile="")
   registerDoSNOW(cl)
 
@@ -56,4 +55,6 @@ runWithWindowsCpuParallelBackend <- function(taskToBeExecuted,
 
   stopCluster(cl)
   assign("activeParallelBackend", FALSE, envir = .GlobalEnv)
+
+  return(invisible())
 }

@@ -33,6 +33,9 @@ runWithLinuxCpuParallelBackend <- function(taskToBeExecuted,
                                            nCores = NULL,
                                            ...) {
 
+  library(parallel)
+  library(doMC)
+
   if(is.null(nCores))
     nCores <- as.numeric(detectCores())
   if(!is.numeric(nCores))
@@ -44,13 +47,12 @@ runWithLinuxCpuParallelBackend <- function(taskToBeExecuted,
   if(!is.function(taskToBeExecuted))
     stop("taskToBeExecuted must be a function!")
 
-  library(parallel)
-  library(doMC)
-
   registerDoMC(nCores)
   assign("activeParallelBackend", TRUE, envir = .GlobalEnv)
 
   taskToBeExecuted(...)
 
   assign("activeParallelBackend", TRUE, envir = .GlobalEnv)
+
+  return(invisible())
 }

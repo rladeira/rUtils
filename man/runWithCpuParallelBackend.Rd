@@ -19,7 +19,7 @@ function.}
 }
 \description{
 Helper function which automatically configures a CPU parallel
-backend either on Linux or Windows (MAC OS is not supported).
+backend either on Linux or Windows (It was not tested in MAC OS).
 It is specially useful when there is a requirement to write R
 code that should be portable between windows and linux.
 }

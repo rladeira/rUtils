@@ -39,4 +39,6 @@ loopUntilDone <- function(func, ...) {
       print(e)
       loopUntilDone(func, ...)
     })
+
+  return(invisible())
 }

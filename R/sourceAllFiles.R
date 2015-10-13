@@ -38,4 +38,6 @@ sourceAllFiles <- function(path = NULL) {
 
   sapply(data.sources, load, .GlobalEnv)
   sapply(file.sources, source, .GlobalEnv)
+
+  return(invisible())
 }
