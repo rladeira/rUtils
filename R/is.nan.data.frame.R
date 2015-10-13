@@ -8,11 +8,12 @@
 #' @param data a data.frame
 #'
 #' @examples
-#' d <- data.frame(c1 = rep(NaN, 10),
-#' c2 = rep(NaN, 10))
+#'
+#' d <- data.frame(c1 = rep(NaN, 10), c2 = rep(NaN, 10))
 #' d[is.nan(d)] <- 0
 #'
-#' @export
+#' @export is.nan.data.frame
+#' @method is.nan data.frame
 
 is.nan.data.frame <- function(d) {
 

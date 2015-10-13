@@ -13,8 +13,7 @@
 function to extend data.frame class, adding NaN checking.
 }
 \examples{
-d <- data.frame(c1 = rep(NaN, 10),
-c2 = rep(NaN, 10))
+d <- data.frame(c1 = rep(NaN, 10), c2 = rep(NaN, 10))
 d[is.nan(d)] <- 0
 }
 
