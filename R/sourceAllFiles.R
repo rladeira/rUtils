@@ -17,7 +17,7 @@
 #' @export
 
 
-sourceAllFiles <- function(path = NULL){
+sourceAllFiles <- function(path = NULL) {
 
   if(is.null(path))
     path <- getwd()

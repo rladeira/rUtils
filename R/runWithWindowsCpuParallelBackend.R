@@ -31,7 +31,7 @@
 
 runWithWindowsCpuParallelBackend <- function(taskToBeExecuted,
                                              nCores = NULL,
-                                             ...){
+                                             ...) {
 
   if(is.null(nCores))
     nCores <- as.numeric(detectCores())

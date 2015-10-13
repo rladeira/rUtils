@@ -28,7 +28,7 @@
 #'
 #' @export
 
-loopUntilDone <- function(func, ...){
+loopUntilDone <- function(func, ...) {
 
   if(!is.function(func))
     stop("func must be a funtion!")

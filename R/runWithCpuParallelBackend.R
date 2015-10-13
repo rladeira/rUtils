@@ -41,7 +41,7 @@
 
 runWithCpuParallelBackend <- function(taskToBeExecuted,
                                       nCores = NULL,
-                                      ...){
+                                      ...) {
 
   if(is.null(nCores))
     nCores <- as.numeric(detectCores())
@@ -53,7 +53,7 @@ runWithCpuParallelBackend <- function(taskToBeExecuted,
     stop("nCores must be a positive integer!")
   if(!is.function(taskToBeExecuted))
     stop("taskToBeExecuted must be a function!")
-    
+
   library(parallel)
 
   switch(Sys.info()[['sysname']],
