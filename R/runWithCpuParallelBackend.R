@@ -43,16 +43,20 @@ runWithCpuParallelBackend <- function(taskToBeExecuted,
                                       nCores = NULL,
                                       ...){
 
-  library(parallel)
-
   if(is.null(nCores))
-    nCores <- detectCores()
-  if(!is.integer(nCores))
-    stop("nCores must be an integer!")
+    nCores <- as.numeric(detectCores())
+  if(!is.numeric(nCores))
+    stop("nCores must be of numeric type!")
+  if(length(nCores) != 1)
+    stop("nCores must be a numeric vector with length one!")
+  if(nCores[1] < 1)
+    stop("nCores must be a positive integer!")
   if(!is.function(taskToBeExecuted))
     stop("taskToBeExecuted must be a function!")
+    
+  library(parallel)
 
   switch(Sys.info()[['sysname']],
-         Windows = execute.with.windows.cpu.parallel.backend(taskToBeExecuted, nCores, ...),
-         Linux   = execute.with.linux.cpu.parallel.backend(taskToBeExecuted, nCores, ...))
+         Windows = runWithWindowsCpuParallelBackend(taskToBeExecuted, nCores, ...),
+         Linux   = runWithLinuxCpuParallelBackend(taskToBeExecuted, nCores, ...))
 }

@@ -33,15 +33,19 @@ runWithWindowsCpuParallelBackend <- function(taskToBeExecuted,
                                              nCores = NULL,
                                              ...){
 
-  library(parallel)
-  library(doSNOW)
-
   if(is.null(nCores))
-    nCores <- detectCores()
-  if(!is.integer(nCores))
-    stop("nCores must be an integer!")
+    nCores <- as.numeric(detectCores())
+  if(!is.numeric(nCores))
+    stop("nCores must be of numeric type!")
+  if(length(nCores) != 1)
+    stop("nCores must be a numeric vector with length one!")
+  if(nCores[1] < 1)
+    stop("nCores must be a positive integer!")
   if(!is.function(taskToBeExecuted))
     stop("taskToBeExecuted must be a function!")
+
+  library(parallel)
+  library(doSNOW)
 
   cl <- makeCluster(nCores, type = "SOCK", outfile="")
   registerDoSNOW(cl)
