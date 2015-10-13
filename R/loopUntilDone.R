@@ -19,16 +19,16 @@
 #' @param ... additional paramaters to be delegated to \code{func}.
 #'
 #' @examples
-#' get.some.resource.in.network.mock <- function(param1, param2) {}
+#' getSomeResourceInNetwork <- function(param1, param2) {}
 #'
-#'  loop.until.done <- function(
-#'    func = get.some.resource.in.network.mock,
+#'  loopUntilDone <- function(
+#'    func = getSomeResourceInNetwork,
 #'    param1 = param1,
 #'    param2 = param2)
 #'
 #' @export
 
-loop.until.done <- function(func, ...){
+loopUntilDone <- function(func, ...){
 
   if(!is.function(func))
     stop("func must be a funtion!")
@@ -37,6 +37,6 @@ loop.until.done <- function(func, ...){
     func(...),
     error = function(e){
       print(e)
-      loop.until.done(func, ...)
+      loopUntilDone(func, ...)
     })
 }

@@ -11,13 +11,13 @@
 #'  \code{getwd()}
 #'
 #' @examples
-#' source.all.files(file.path("dir1", "dir2"))
-#' source.all.files()
+#' sourceAllFiles(file.path("dir1", "dir2"))
+#' sourceAllFiles()
 #'
 #' @export
 
 
-source.all.files <- function(path = NULL){
+sourceAllFiles <- function(path = NULL){
 
   if(is.null(path))
     path <- getwd()

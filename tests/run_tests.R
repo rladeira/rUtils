@@ -1,8 +1,8 @@
 
 library(testthat)
 
-source(file.path("R", "source.all.files.R"))
+source(file.path("R", "sourceAllFiles.R"))
 
-source.all.files(path = "R")
+sourceAllFiles(path = "R")
 
 test_dir("tests")
