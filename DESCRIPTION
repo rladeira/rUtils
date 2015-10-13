@@ -1,4 +1,4 @@
-Package: rl.utils
+Package: rUtils
 Title: Custom utility functions
 Version: 1.0.0
 Authors@R: person("Rafael", "Ladeira", email = "rwladeira@gmail.com", role = c("aut", "cre"))
