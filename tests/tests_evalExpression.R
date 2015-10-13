@@ -17,9 +17,11 @@ test_that("evalExpression evaluates text as code", {
   evalExpression("a <- 1")
   evalExpression("b <- list(i = 1)")
   evalExpression("c <- 1:100")
+  d <- evalExpression("2*2")
 
   expect_that(a, equals(1))
   expect_that(is.list(b), is_true())
   expect_that(b$i, equals(1))
   expect_that(length(c), equals(100))
-})
+  expect_that(d, equals(4))}
+)
