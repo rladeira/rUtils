@@ -9,7 +9,7 @@
 #' @param operation a target function to have its execution time
 #' measured.
 #' @param type the OS time type to be returned by timeOperation.
-#' Defaults to 'elapsed'.
+#' Defaults to "elapsed".
 #'
 #' @examples
 #'

@@ -11,7 +11,7 @@ timeOperation(operation, type = c("elapsed", "user.self", "sys.self"))
 measured.}
 
 \item{type}{the OS time type to be returned by timeOperation.
-Defaults to 'elapsed'.}
+Defaults to "elapsed".}
 }
 \description{
 Function to measure how much time (in seconds) some operation
