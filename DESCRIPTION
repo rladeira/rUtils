@@ -6,3 +6,4 @@ Description: An R package with several utility functions for helping to build mo
 Depends: R (>= 3.1.2)
 License: MIT
 LazyData: true
+Suggests: testthat
