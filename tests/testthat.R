@@ -1,5 +1,5 @@
 
 library(testthat)
-library(rUtils)
+library(rutils)
 
-test_check("rUtils")
+test_check("rutils")

@@ -1,9 +1,13 @@
-Package: rUtils
+Package: rutils
 Title: Custom utility functions
-Version: 1.0.0
+Version: 0.0.0.9000
 Authors@R: person("Rafael", "Ladeira", email = "rwladeira@gmail.com", role = c("aut", "cre"))
-Description: An R package with several utility functions for helping to build more readable code in R.
-Depends: R (>= 3.1.2)
+Description: An R package with several utility functions for helping to build
+    more readable code in R.
+Depends:
+    R (>= 3.1.2)
 License: MIT
 LazyData: true
-Suggests: testthat
+Suggests:
+    testthat
+RoxygenNote: 5.0.1

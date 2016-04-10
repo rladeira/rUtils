@@ -17,9 +17,8 @@
 
 is.nan.data.frame <- function(d) {
 
-  if(is.data.frame(d) == FALSE)
+  if (is.data.frame(d) == FALSE) {
     stop("d must be a data.frame.")
-
+  }
   do.call(cbind, lapply(d, is.nan))
 }
-

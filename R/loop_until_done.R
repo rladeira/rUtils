@@ -1,5 +1,4 @@
 
-
 #' @title
 #' Error Swallower
 #'
@@ -19,26 +18,23 @@
 #' @param ... additional paramaters to be delegated to \code{func}.
 #'
 #' @examples
-#' getSomeResourceInNetwork <- function(param1, param2) {}
+#' get_some_network_resource <- function(param1, param2) {}
 #'
-#'  loopUntilDone <- function(
-#'    func = getSomeResourceInNetwork,
+#'  loop_until_done <- function(
+#'    func = get_some_network_resource,
 #'    param1 = param1,
 #'    param2 = param2)
 #'
 #' @export
 
-loopUntilDone <- function(func, ...) {
+loop_until_done <- function(func, ...) {
 
-  if(!is.function(func))
+  if (!is.function(func)) {
     stop("func must be a funtion!")
-
-  tryCatch(
-    func(...),
-    error = function(e){
-      print(e)
-      loopUntilDone(func, ...)
-    })
-
-  return(invisible())
+  }
+  tryCatch(func(...), error = function(e) {
+    print(e)
+    loop_until_done(func, ...)
+  })
+  invisible()
 }
