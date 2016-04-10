@@ -24,10 +24,10 @@ and thus depends on external resources that could fail
 unexpectedly.
 }
 \examples{
-getSomeResourceInNetwork <- function(param1, param2) {}
+get_some_network_resource <- function(param1, param2) {}
 
  loop_until_done <- function(
-   func = getSomeResourceInNetwork,
+   func = get_some_network_resource,
    param1 = param1,
    param2 = param2)
 

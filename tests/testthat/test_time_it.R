@@ -3,12 +3,18 @@ context("time_it")
 
 test_that("time_it throws exception for bad input",{
 
-  expect_that(time_it(list()),
-              throws_error("Invalid argument! operation must be a function."))
-  expect_that(time_it(1),
-              throws_error("Invalid argument! operation must be a function."))
-  expect_that(time_it(character()),
-              throws_error("Invalid argument! operation must be a function."))
+  expect_that(
+    time_it(list()),
+    throws_error("Invalid argument! operation must be a function.")
+  )
+  expect_that(
+    time_it(1),
+    throws_error("Invalid argument! operation must be a function.")
+  )
+  expect_that(
+    time_it(character()),
+    throws_error("Invalid argument! operation must be a function.")
+  )
 
 })
 

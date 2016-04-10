@@ -4,10 +4,10 @@
 \alias{eval_expr}
 \title{Metaprogramming}
 \usage{
-eval_expr(expr_as_chars)
+eval_expr(expr)
 }
 \arguments{
-\item{expr_as_chars}{a vector of length 1 containing the
+\item{expr}{a vector of length 1 containing the
 code to be executed as a character element.}
 }
 \description{
@@ -17,7 +17,8 @@ code.
 \examples{
 
 eval_expr('n <- 1 + 1')
-cat(n) ## 2
+cat(n)
+## 2
 
 }
 

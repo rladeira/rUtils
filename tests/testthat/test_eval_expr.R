@@ -5,14 +5,16 @@ test_that("eval_expr throws exception for bad input",{
 
   expect_that(
     eval_expr(list()),
-    throws_error("expr must be of type character!"))
+    throws_error("expr must be of type character!")
+  )
   expect_that(
     eval_expr(c("1+1", "1+1")),
-    throws_error("expr must have just one character element!"))
+    throws_error("expr must have just one character element!")
+  )
   expect_that(
     eval_expr(character()),
-    throws_error("expr cannot be empty!"))
-
+    throws_error("expr cannot be empty!")
+  )
 })
 
 test_that("eval_expr evaluates text as code", {
